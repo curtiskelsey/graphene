@@ -1,0 +1,57 @@
+{
+  "name": "curtiskelsey/graphene",
+  "type": "library",
+  "keywords": [
+    "date",
+    "time",
+    "DateTime",
+    "Carbon",
+    "Graphene"
+  ],
+  "description": "A simple tool extension for Carbon",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Curtis Kelsey",
+      "email": "curtis.kelsey@gmail.com",
+      "homepage": "https://curtiskelsey.info"
+    }
+  ],
+  "homepage": "https://github.com/curtiskelsey/Graphene",
+  "support": {
+    "issues": "https://github.com/curtiskelsey/Graphene/issues",
+    "source": "https://github.com/curtiskelsey/Graphene"
+  },
+  "require": {
+    "php": ">=5.4",
+    "nesbot/carbon": "^1.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "friendsofphp/php-cs-fixer": "~2",
+    "phpunit/phpunit": "^4.8.35 || ^5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Graphene\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Graphene\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": [
+      "@phpunit",
+      "@phpcs"
+    ],
+    "phpunit": "phpunit --verbose --coverage-clover=coverage.xml",
+    "phpcs": "php-cs-fixer fix -v --diff --dry-run",
+    "phpstan": "phpstan analyse --configuration phpstan.neon --level 3 src tests"
+  }
+}
